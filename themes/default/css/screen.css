@@ -1,0 +1,293 @@
+* {
+    -moz-box-sizing: border-box;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+    display: block;
+}
+
+a {
+    color: #2980B9;
+    text-decoration: none;
+}
+
+ul, ol, dl {
+    list-style: none;
+    list-style-image: none;
+}
+
+body {
+    background: left repeat-y #FCFCFC;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxOERBMTRGRDBFMUUxMUUzODUwMkJCOThDMEVFNURFMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOERBMTRGRTBFMUUxMUUzODUwMkJCOThDMEVFNURFMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjE4REExNEZCMEUxRTExRTM4NTAyQkI5OEMwRUU1REUwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE4REExNEZDMEUxRTExRTM4NTAyQkI5OEMwRUU1REUwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+EwrlwAAAAA5JREFUeNpiMDU0BAgwAAE2AJgB9BnaAAAAAElFTkSuQmCC);
+    background-size: 300px 1px;
+    color: #404040;
+    font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+code {
+    color: maroon;
+    white-space: pre-wrap;
+}
+
+dt {
+    display: block;
+}
+
+footer {
+    font-size: 70%;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #CCC;
+    display: block;
+    height: 1px;
+    margin: 20px 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, legend {
+    font-weight: 700;
+    font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
+    margin-bottom: 0.7em;
+    margin-top: 0;
+}
+
+h1 { font-size: 200%; }
+h2 { font-size: 150%; }
+h3 { font-size: 125%; }
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+    -moz-transition: border 0.3s linear;
+    -webkit-appearance: none;
+    -webkit-transition: border 0.3s linear;
+    border: 1px solid #CCC;
+    border-radius: 0;
+    box-shadow: inset 0 1px 3px #DDD;
+    display: inline-block;
+    font-size: 80%;
+    font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+    outline: none;
+    padding: 6px;
+    transition: border 0.3s linear;
+}
+
+#meta-box {
+    background: #1F1D1D;
+    bottom: 0;
+    color: #FCFCFC;
+    left: 0;
+    position: fixed;
+    width: 300px;
+    z-index: 400;
+}
+
+p {
+    margin-bottom: 0.8em;
+}
+
+table {
+    border: 1px solid #E1E4E5;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #E1E4E5;
+    padding: 10px;
+}
+
+th {
+    background-color: #F1F1F1;
+}
+
+#meta-title {
+    background-color: #272525;
+    color: #FCFCFC;
+    cursor: pointer;
+    display: block;
+    font-size: 90%;
+    padding: 12px;
+    text-align: right;
+}
+
+#meta-title:before {
+    content: "";
+    display: table;
+}
+
+#meta-title:after {
+    clear: both;
+}
+
+#meta-title .title {
+    float: left;
+}
+
+#meta-title .fa-book {
+    margin-right: 5px;
+}
+
+#meta-data {
+    color: #808080;
+    display: none;
+    font-size: 90%;
+    padding: 12px;
+}
+
+#meta-data a {
+    color: #FCFCFC;
+    display: inline-block;
+}
+
+#meta-data dd {
+    color: #FCFCFC;
+    padding: 6px;
+}
+
+#toc {
+    background: #343131;
+    left: 0;
+    min-height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 300px;
+    z-index: 200;
+}
+
+#toc a {
+    color: #B3B3B3;
+    display: block;
+    font-size: 90%;
+    line-height: 18px;
+    padding: 0.4045em 1.618em;
+    position: relative;
+}
+
+#toc li.current {
+    background: #E3E3E3;
+}
+
+#toc a:hover {
+    background-color: #4E4A4A;
+}
+
+#toc li.current a {
+    border-right: solid 1px #C9C9C9;
+    color: #808080;
+    padding: 0.4045em 2.427em;
+}
+
+#toc li.current a:hover {
+    background: #D6D6D6;
+}
+
+#toc li.current > a {
+    background: #FCFCFC;
+    border: none;
+    border-bottom: solid 1px #C9C9C9;
+    border-top: solid 1px #C9C9C9;
+    color: #404040;
+    font-weight: bold;
+    padding: 0.4045em 1.618em;
+    padding-left: 1.618em -4px;
+    position: relative;
+}
+
+#toc li.current > a:hover {
+    background: #FCFCFC;
+}
+
+#header {
+    background-color: #2980B9;
+    color: #FCFCFC;
+    display: block;
+    text-align: center;
+    padding: 0.809em;
+    margin-bottom: 0.809em;
+    z-index: 200;
+}
+
+#header a {
+    color: #FCFCFC;
+    display: inline-block;
+    font-size: 100%;
+    font-weight: bold;
+    padding: 4px 6px;
+}
+
+#header a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#header a .fa-home {
+    margin-right: 5px;
+}
+
+#header form {
+    display: block;
+}
+
+#header input[type=text] {
+    border-color: #2472A4;
+    border-radius: 50px;
+    padding: 6px 12px;
+    width: 100%;
+}
+
+#content {
+    margin-left: 300px;
+    background: #FCFCFC;
+    height: 100%;
+    max-width: 800px;
+    min-height: 100%;
+    padding: 1.618em 3.236em;
+}
+
+.breadcrumb li {
+    display: inline-block;
+}
+
+.breadcrumb li.aside {
+    float: right;
+}
+
+@media print {
+    body {
+        background: none;
+    }
+    .breadcrumb .aside {
+        display: none;
+    }
+    #content {
+        margin: auto;
+    }
+    #meta-box {
+        display: none;
+    }
+    #toc {
+        display: none;
+    }
+}

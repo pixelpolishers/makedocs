@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" >
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{{ page.title }}</title>
+
+        <link rel="stylesheet" type="text/css" href="{{ project.url }}/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{ project.url }}/css/screen.css" />
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+        <link rel="top" title="{{ project.title }} documentation" href="{{ project.url }}" />
+        {% if breadcrumb.next %}
+        <link rel="next" title="{{ breadcrumb.next.title }}" href="{{ breadcrumb.next.url }}" />
+        {% endif %}
+        {% if breadcrumb.prev %}
+        <link rel="prev" title="{{ breadcrumb.prev.title }}" href="{{ breadcrumb.prev.url }}" />
+        {% endif %}
+
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ project.url }}/js/makedocs.js"></script>
+
+        {% if project.googleAnalytics %}
+        <script type="text/javascript">
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', '{{ project.googleAnalytics }}']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+        {% endif %}
+    </head>
+    <body>
+
+        <div id="container">
+            <nav id="toc">
+                <div id="header">
+                    <a href="{{ project.url }}"><span class="fa fa-home"></span>{{ project.title }}</a>
+                </div>
+
+                <div class="wy-menu wy-menu-vertical" data-spy="affix">
+                    <ul>
+                    {% for toc in project.toc %}
+                        {% if toc.url == page.url %}
+                        <li class="current">
+                            <a href="{{ toc.url }}">{{ toc.title|e }}</a>
+                            {% if toc.childs %}
+                            <ul>
+                                {% for tocChild in toc.childs %}
+                                <li><a href="{{ tocChild.url }}">{{ tocChild.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{{ toc.url }}">{{ toc.title|e }}</a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+            </nav>
+
+            <section id="content">
+                <div>
+                        <ul class="breadcrumb">
+                            <li><a href="{{ project.url }}">Docs</a> &raquo;</li>
+                            <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                            <li class="aside">
+                                {% if project.github %}
+                                <a href="{{ project.github }}"><span class="fa fa-github"></span> Edit on GitHub</a>
+                                {% endif %}
+                            </li>
+                        </ul>
+
+                        <hr/>
+
+                        <div class="section" id="read-the-docs-features">
+                            {{ page.content|raw }}
+                        </div>
+
+                        <footer>
+                            <div class="rst-footer-buttons">
+                                {% if breadcrumb.next %}
+                                <a href="{{ breadcrumb.next.url }}" class="btn btn-neutral float-right">Next <span class="icon icon-circle-arrow-right"></span></a>
+                                {% endif %}
+                                {% if breadcrumb.prev %}
+                                <a href="{{ breadcrumb.prev.url }}" class="btn btn-neutral"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+                                {% endif %}
+                            </div>
+
+                            <hr/>
+
+                            <p>
+                                &copy; Copyright 2012-{{ "now"|date("Y") }}, <a href="http://pixelpolishers.com">Pixel Polishers</a>.
+                                Theme based on <a href="http://readthedocs.org">ReadTheDocs</a>'s <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a>
+                            </p>
+                        </footer>
+                    </div>
+            </section>
+        </div>
+
+        <div id="meta-box">
+            <span id="meta-title">
+                <span class="title"><span class="fa fa-book"></span>Information</span>
+                v: latest
+                <span class="fa fa-caret-up"></span>
+            </span>
+            <div id="meta-data">
+                <dl>
+                    <dt>Versions</dt>
+                    <dd><a href="">latest</a></dd>
+                </dl>
+                {% if builders.pdf or builders.htmlzip or builders.epub %}
+                <dl>
+                    <dt>Downloads</dt>
+
+                    {% if builders.pdf %}
+                    <dd><a href="">PDF</a></dd>
+                    {% endif %}
+                    {% if builders.htmlzip %}
+                    <dd><a href="">HTML</a></dd>
+                    {% endif %}
+                    {% if builders.epub %}
+                    <dd><a href="">Epub</a></dd>
+                    {% endif %}
+                </dl>
+                {% endif %}
+                <dl>
+                    <dt>Generated on</dt>
+                    <dd>{{ project.generated|date("r") }}</dd>
+                </dl>
+            </div>
+        </div>
+
+    </body>
+</html>

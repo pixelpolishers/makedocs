@@ -1,0 +1,9 @@
+{
+    "name": "Default",
+    "description": "A theme based on Read the Docs.",
+    "assets": [
+        "css/*",
+        "fonts/*",
+        "js/*"
+    ]
+}

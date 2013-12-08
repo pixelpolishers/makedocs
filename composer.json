@@ -1,0 +1,31 @@
+{
+    "name": "pixelpolishers/makedocs",
+    "description": "A documentation generator written in PHP.",
+    "homepage": "http://pixelpolishers.com/",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Walter Tamboer",
+            "email": "w.tamboer@pixelpolishers.com",
+            "homepage": "http://www.pixelpolishers.com"
+        }
+    ],
+    "support": {
+        "irc": "irc://irc.freenode.org/pixelpolishers",
+        "issues": "https://github.com/pixelpolishers/makedocs/issues"
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "twig/twig": "1.*",
+        "symfony/process": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-0": {
+			"MakeDocs": "src/"
+		}
+    }
+}

@@ -15,15 +15,16 @@ class GitDriver implements DriverInterface
     public function install(DriverConfig $config)
     {
         if (is_dir($config->getDirectory())) {
-            $command = sprintf('cd "%s" && git pull', $config->getDirectory());
-            return; // @todo Remove this
+            $command = sprintf('cd "%s" && git pull origin %s',
+                $config->getDirectory(),
+                $config->getBranch());
         } else {
             $command = sprintf('git clone -b %s %s "%s"',
                 $config->getBranch(),
                 $config->getRepository(),
                 $config->getDirectory());
         }
-
+        
         $process = new Process($command);
         $process->run();
 

@@ -35,7 +35,7 @@ class AssetManager
     public function addAsset($name, $path)
     {
         if (!is_file($path)) {
-            throw new \RuntimeException('The file "' . $path . '" does not exist.');
+            throw new \RuntimeException('The asset file "' . $path . '" does not exist.');
         }
         $this->assets[$name] = $path;
     }

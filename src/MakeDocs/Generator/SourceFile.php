@@ -36,7 +36,7 @@ class SourceFile
     public function __construct($name, $path)
     {
         if (!is_file($path)) {
-            throw new \RuntimeException('The file "' . $path . '" does not exist.');
+            throw new \RuntimeException('The source file "' . $path . '" (' . $name . ') does not exist.');
         }
 
         $this->name = $name;

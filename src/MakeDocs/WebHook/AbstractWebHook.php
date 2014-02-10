@@ -8,8 +8,6 @@
 
 namespace MakeDocs\WebHook;
 
-use MakeDocs\Driver\DriverConfig;
-use MakeDocs\Generator\GeneratorConfig;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
@@ -18,20 +16,17 @@ use RecursiveIteratorIterator;
  */
 abstract class AbstractWebHook implements WebHookInterface
 {
-    protected function detectInputPath(DriverConfig $driverConfig, GeneratorConfig $generatorConfig)
+    protected function detectConfigFile($path)
     {
-        $it = new RecursiveDirectoryIterator($driverConfig->getDirectory());
+        $it = new RecursiveDirectoryIterator($path);
         $objects = new RecursiveIteratorIterator($it, RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($objects as $fileInfo) {
-            if ($fileInfo->isFile() && $fileInfo->getFilename() == 'makedocs.xml') {
-                echo $fileInfo->getPathname();
-                break;
+            if ($fileInfo->isFile() && $fileInfo->getFilename() == 'makedocs.json') {
+                return dirname(realpath($fileInfo->getPathname()));
             }
         }
 
-        echo '<pre>';
-        print_r($generatorConfig);
-        exit;
+        return null;
     }
 }

@@ -8,10 +8,9 @@
 
 namespace MakeDocs\WebHook\GitHub;
 
-use MakeDocs\Generator\Config;
-
 class Payload
 {
+    private $repository;
     private $ref;
 
     public function __construct($payload)
@@ -19,15 +18,28 @@ class Payload
         $this->parse($payload);
     }
 
+    public function getRepository()
+    {
+        return $this->repository;
+    }
+
+    public function getRef()
+    {
+        return $this->ref;
+    }
+
+    public function getBranch()
+    {
+        $ref = $this->getRef();
+        $parts = explode('/', $ref);
+        return array_pop($parts);
+    }
+
     private function parse($payload)
     {
         $object = json_decode($payload);
 
         $this->ref = $object->ref;
-    }
-
-    public function updateConfig(Config $config)
-    {
-        $config->setVersion('1.0.0');
+        $this->repository = $object->repository->name;
     }
 }
